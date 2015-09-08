@@ -1,4 +1,8 @@
 Payola.configure do |config|
+  config.secret_key = "sk_test_bCKoKAs1o2jciSJ6Egi4i5tr"
+  config.publishable_key = "pk_test_q8xRzIcHxx2NXmAhb2yxKxv5"
+  config.background_worker = :active_job
+  
   # Example subscription:
   # 
   # config.subscribe 'payola.package.sale.finished' do |sale|
@@ -21,8 +25,8 @@ Payola.configure do |config|
   # end
 
   # Keep this subscription unless you want to disable refund handling
-  config.subscribe 'charge.refunded' do |event|
-    sale = Payola::Sale.find_by(stripe_id: event.data.object.id)
-    sale.refund!
-  end
+  #config.subscribe 'charge.refunded' do |event|
+  #  sale = Payola::Sale.find_by(stripe_id: event.data.object.id)
+  #  sale.refund!
+  #end
 end

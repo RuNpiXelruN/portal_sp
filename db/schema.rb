@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907113650) do
+ActiveRecord::Schema.define(version: 20150908085643) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "payola_affiliates", force: :cascade do |t|
     t.string   "code"

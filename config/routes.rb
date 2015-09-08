@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   mount Payola::Engine => '/payola', as: :payola
   
   resources :contacts
